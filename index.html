@@ -15,19 +15,19 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Numero sovrapposto */
+        /* Numero sovrapposto sulla finestra */
         #numero {
             position: absolute;
-            top: 48%;    /* posizione verticale approssimata sulla finestrella */
-            left: 72%;   /* posizione orizzontale approssimata sulla finestrella */
+            top: 42%;    /* verticale → regola qui per centrare meglio sulla finestra */
+            left: 73%;   /* orizzontale → regola qui per centrare meglio sulla finestra */
             transform: translate(-50%, -50%);
-            font-size: 3em;
+            font-size: 2.5em;
             font-weight: bold;
             color: white;
-            text-shadow: 2px 2px 8px black; /* migliore visibilità */
-            background: rgba(0,0,0,0.3);   /* leggero riquadro trasparente */
-            padding: 8px 16px;
-            border-radius: 10px;
+            text-shadow: 2px 2px 8px black;
+            background: rgba(0,0,0,0.3);   /* riquadro trasparente per leggibilità */
+            padding: 6px 12px;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -35,7 +35,7 @@
     <div id="numero">0</div>
 
     <script>
-        // Inserisci qui i valori di portata o altri numeri noti
+        // Inserisci qui i valori noti o letti da Modbus
         const numeri = [12, 34, 56, 78, 90];
 
         function aggiornaNumero() {
