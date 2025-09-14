@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Numero in tempo reale</title>
+    <style>
+        /* Stile pagina */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            background-image: url('sfondo.jpg'); /* nome file immagine */
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 5em;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="numero">0</h1>
+
+    <script>
+        // Inserisci qui i numeri noti da mostrare
+        const numeri = [12, 34, 56, 78, 90];
+
+        function aggiornaNumero() {
+            const index = Math.floor(Date.now() / 10000) % numeri.length; // cambia ogni 10 secondi
+            document.getElementById('numero').textContent = numeri[index];
+        }
+
+        // Primo aggiornamento
+        aggiornaNumero();
+
+        // Aggiorna ogni secondo (puoi anche mettere 500ms)
+        setInterval(aggiornaNumero, 1000);
+    </script>
+</body>
+</html>
