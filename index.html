@@ -124,7 +124,10 @@
           const data = await response.json();
 
           // DMV
-          document.getElementById('DMV').innerText = data.DMV;
+          document.getElementById('DMV').innerText =
+    (data.DMV > 900) ? 900 :
+    (data.DMV < 50)  ? 0   :
+    data.DMV;
 
           // STATO tradotto in testo
           if (data.STATO == 1 || data.STATO === "1") {
